@@ -1,29 +1,28 @@
 /*
-----------------------------------------------------------
+-------------------------------------------------------------------------------
 Project: Superstore Sales Performance Analysis
 Author: Serhat Kaan Hitay
 Date: 2026-01-21
-Description: Updated schema to match the simplified 
-             Superstore CSV structure (13 columns).
-----------------------------------------------------------
+Description: Finalized schema matching the 13-column CSV structure.
+-------------------------------------------------------------------------------
 */
 
--- Step 1: Drop existing table if it exists
+-- Step 1: Drop the table to clear old settings
 DROP TABLE IF EXISTS superstore_sales;
 
--- Step 2: Create the table structure matching the CSV
+-- Step 2: Create the table structure (Must match CSV column order exactly)
 CREATE TABLE superstore_sales (
-    ship_mode VARCHAR(25),
-    segment VARCHAR(25),
-    country VARCHAR(50),
-    city VARCHAR(50),
-    state VARCHAR(50),
-    postal_code VARCHAR(20),
-    region VARCHAR(25),
-    category VARCHAR(25),
-    sub_category VARCHAR(25),
+    ship_mode VARCHAR(255),
+    segment VARCHAR(255),
+    country VARCHAR(255),
+    city VARCHAR(255),
+    state VARCHAR(255),
+    postal_code VARCHAR(255),
+    region VARCHAR(255),
+    category VARCHAR(255),
+    sub_category VARCHAR(255),
     sales NUMERIC(10, 2),
     quantity INT,
-    discount NUMERIC(4, 2),
+    discount NUMERIC(10, 2),
     profit NUMERIC(10, 2)
 );
