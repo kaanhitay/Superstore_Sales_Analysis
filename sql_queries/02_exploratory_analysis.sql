@@ -45,3 +45,15 @@ FROM superstore_sales
 GROUP BY segment
 ORDER BY total_profit DESC;
 ORDER BY total_profit DESC;
+
+-- Query 4: Regional Performance Analysis
+-- Objective: Identify which geographical regions are the most and least profitable.
+
+SELECT 
+    region, 
+    ROUND(SUM(sales), 2) AS total_sales,
+    ROUND(SUM(profit), 2) AS total_profit,
+    ROUND(SUM(profit) / SUM(sales) * 100, 2) AS profit_margin_percent
+FROM superstore_sales
+GROUP BY region
+ORDER BY total_profit DESC;
