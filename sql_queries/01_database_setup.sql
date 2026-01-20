@@ -1,39 +1,29 @@
 /*
--------------------------------------------------------------------------------
+----------------------------------------------------------
 Project: Superstore Sales Performance Analysis
 Author: Serhat Kaan Hitay
-Description: This script initializes the database schema by creating the 
-             'superstore_sales' table. Data types are optimized for 
-             financial analysis and data integrity.
--------------------------------------------------------------------------------
+Date: 2026-01-21
+Description: Updated schema to match the simplified 
+             Superstore CSV structure (13 columns).
+----------------------------------------------------------
 */
 
--- Step 1: Create the table structure
--- We use VARCHAR(20) for postal_code to preserve leading zeros, 
--- which is a best practice for geographic data integrity.
+-- Step 1: Drop existing table if it exists
+DROP TABLE IF EXISTS superstore_sales;
 
+-- Step 2: Create the table structure matching the CSV
 CREATE TABLE superstore_sales (
-    row_id INT PRIMARY KEY,
-    order_id VARCHAR(25),
-    order_date DATE,
-    ship_date DATE,
     ship_mode VARCHAR(25),
-    customer_id VARCHAR(25),
-    customer_name VARCHAR(100),
     segment VARCHAR(25),
     country VARCHAR(50),
     city VARCHAR(50),
     state VARCHAR(50),
-    postal_code VARCHAR(20), 
+    postal_code VARCHAR(20),
     region VARCHAR(25),
-    product_id VARCHAR(25),
     category VARCHAR(25),
     sub_category VARCHAR(25),
-    product_name VARCHAR(255),
     sales NUMERIC(10, 2),
     quantity INT,
     discount NUMERIC(4, 2),
     profit NUMERIC(10, 2)
 );
-
--- End of Script
