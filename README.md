@@ -1,3 +1,4 @@
+![Executive Sales & Profitability Dashboard](Executive_Sales_Profitability_Dashboard.png)
 Executive Sales & Profitability Analysis 📊
 Project Overview
 This is an end-to-end data analytics project designed to identify profitability trends and operational growth opportunities for a retail business. The workflow involves raw data processing with PostgreSQL, KPI calculation, and the development of a high-fidelity Power BI Executive Dashboard for strategic decision-making.
