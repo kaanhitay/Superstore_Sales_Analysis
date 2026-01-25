@@ -44,7 +44,6 @@ SELECT
 FROM superstore_sales
 GROUP BY segment
 ORDER BY total_profit DESC;
-ORDER BY total_profit DESC;
 
 -- Query 4: Regional Performance Analysis
 -- Objective: Identify which geographical regions are the most and least profitable.
