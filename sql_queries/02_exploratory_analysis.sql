@@ -33,7 +33,7 @@ WHERE category = 'Furniture'
 GROUP BY sub_category
 ORDER BY total_profit ASC;
 
--- Query 3: Customer Segment Performance (Updated)
+-- Query 3: Customer Segment Performance 
 -- Objective: Analyze profitability across different customer segments.
 
 SELECT 
