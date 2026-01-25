@@ -44,3 +44,8 @@ Based on the data-driven insights from the dashboard, the following actions are 
 * **Scale High-Margin Products:** Increase the marketing budget and inventory for **Copiers ($56K profit)** and **Phones ($45K profit)**, as they are the primary growth drivers of the business.
 * **Regional Optimization:** Focus expansion efforts on the **West** region, which currently leads in both sales volume and profit margin stability.
 * **Furniture Category Review:** Re-evaluate the pricing model for the entire **Furniture** segment to ensure that profitable items like **Chairs** are not being offset by underperforming sub-categories.
+
+## 🔍 Data Validation (SQL vs. Power BI)
+To ensure the integrity of the analysis, I cross-validated the Power BI visual metrics with the underlying PostgreSQL database. The **$286.4K Total Profit** matches perfectly between both platforms.
+
+![SQL Validation Proof](sql_validation_result.png)
