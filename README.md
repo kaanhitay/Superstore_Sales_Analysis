@@ -48,4 +48,4 @@ Based on the data-driven insights from the dashboard, the following actions are 
 ## 🔍 Data Validation (SQL vs. Power BI)
 To ensure the integrity of the analysis, I cross-validated the Power BI visual metrics with the underlying PostgreSQL database. The **$286.4K Total Profit** matches perfectly between both platforms.
 
-![SQL Validation Proof](sql_validation_result.png)
+![SQL Validation Proof](sql_queries/sql_validation_result.png)
