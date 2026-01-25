@@ -34,3 +34,13 @@ Database: PostgreSQL (Data Transformation & Aggregation)
 Visualization: Power BI (Reporting & UI Design)
 
 Methodology: Descriptive & Diagnostic Analytics
+
+---
+
+## 💡 Strategic Recommendations
+Based on the data-driven insights from the dashboard, the following actions are recommended:
+
+* **Urgent Intervention on Tables:** Investigate the high logistics costs and aggressive discount strategies associated with the **Tables** sub-category to stop the **-$18K** net loss.
+* **Scale High-Margin Products:** Increase the marketing budget and inventory for **Copiers ($56K profit)** and **Phones ($45K profit)**, as they are the primary growth drivers of the business.
+* **Regional Optimization:** Focus expansion efforts on the **West** region, which currently leads in both sales volume and profit margin stability.
+* **Furniture Category Review:** Re-evaluate the pricing model for the entire **Furniture** segment to ensure that profitable items like **Chairs** are not being offset by underperforming sub-categories.
