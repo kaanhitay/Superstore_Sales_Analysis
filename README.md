@@ -38,38 +38,37 @@ Methodology: Descriptive & Diagnostic Analytics
 ---
 
 ## 💡 Strategic Recommendations
-Based on the data-driven insights from the dashboard, the following actions are recommended:
 
-* **Urgent Intervention on Tables:** Investigate the high logistics costs and aggressive discount strategies associated with the **Tables** sub-category to stop the **-$18K** net loss.
-* **Scale High-Margin Products:** Increase the marketing budget and inventory for **Copiers ($56K profit)** and **Phones ($45K profit)**, as they are the primary growth drivers of the business.
-* **Regional Optimization:** Focus expansion efforts on the **West** region, which currently leads in both sales volume and profit margin stability.
-* **Furniture Category Review:** Re-evaluate the pricing model for the entire **Furniture** segment to ensure that profitable items like **Chairs** are not being offset by underperforming sub-categories.
+* **Furniture Category Review:** Re-evaluate the pricing and discounting model for the **Tables** segment. Profitable items like Chairs should not have their gains offset by underperforming sub-categories.
 
-### 🛠️ Data Notes & Assumptions
+* **Profitability Optimization:** Investigate discounting patterns and negative-profit line items associated with the Tables sub-category to address the -$18K net loss.
+
+
+## 🛠️ Data Notes & Assumptions
 
 To keep the analysis transparent and reproducible:
 
-* **Profit Definition:** `profit` is a native column included in the Superstore dataset (not manually derived). It is stored as **NUMERIC** in PostgreSQL to preserve precision.
+* **Profit Definition:** `profit` is a native column in the Superstore dataset (not manually derived). It is stored as **NUMERIC** in PostgreSQL to preserve precision.
 
 * **Aggregation Logic:** All KPIs (e.g., Total Sales, Total Profit) are computed using `SUM()` in SQL and `SUM()`-equivalent aggregation in Power BI.
 
 * **Scope:** This iteration focuses on transactional sales performance. A separate "Returns" dataset is **not** used to maintain focus on core metrics.
 
 
-### 🔍 Technical Validation (SQL ↔ Power BI)
+## 🔍 Technical Validation (SQL ↔ Power BI)
 
 A cross-platform validation was performed to ensure the reported KPIs are consistent:
 
 * **PostgreSQL Output:** The KPI validation query returns **Total Profit = 286,397.8**.
 
-* **Power BI Output:** The `Total Profit` measure uses `SUM(superstore_sales[profit])`. The dashboard card displays **$286.4K** because the visual uses **Display units: Thousands** with rounding applied at the display level.
+* **Power BI Output:** The `Total Profit` measure uses `SUM(superstore_sales[profit])`. The dashboard card displays **$286.4K** because the visual uses **Display units: Thousands** with rounding applied ($286,397.8 \rightarrow \$286.4\text{K}$).
 
-* **Result:** The SQL total profit and the Power BI total profit **match**, with any difference explained purely by visual rounding ($286,397.8 \rightarrow \$286.4\text{K}$).
+* **Result:** The SQL total profit and the Power BI total profit **match** perfectly.
 
-![SQL Validation Proof](sql_validation_result.png)
+![SQL Validation Proof](sql_queries/sql_validation_result.png)
 
 
-### 📉 Deep Dive: The "Tables" Profitability Issue
+## 📉 Deep Dive: The "Tables" Profitability Issue
 
 The negative profit in the **Tables** sub-category ($\approx$ **-$18K**) is primarily associated with:
 
@@ -78,14 +77,7 @@ The negative profit in the **Tables** sub-category ($\approx$ **-$18K**) is prim
 * **Negative-Profit Line Items:** Multiple transactions show negative profit despite meaningful sales volume, indicating margin erosion at the order-line level.
 
 
-### 💡 Strategic Recommendations
-
-* **Furniture Category Review:** Re-evaluate the pricing and discounting model for the **Tables** sub-category to prevent underperforming items from offsetting the gains in Chairs and Furnishings.
-
-* **Profitability Optimization:** Investigate discounting patterns and negative-profit line items associated with high-volume categories to improve overall net margins.
-
-
-### 🚀 Reproducibility (How to Run)
+## 🚀 Reproducibility (How to Run)
 
 1. **Database Setup:** Run the SQL scripts in `/sql_queries` in numeric order (`01_*` → `02_*` → `03_*`).
 
